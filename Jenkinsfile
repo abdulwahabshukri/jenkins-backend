@@ -1,6 +1,9 @@
 pipeline {
-    agent any
-
+    agent {
+        node {
+            label 'webserver'
+        }
+    }
     stages {
         stage('Build') {
             steps {

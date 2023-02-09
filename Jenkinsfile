@@ -27,7 +27,7 @@ pipeline {
                 sh '''
                 docker stop jenkins-backend || true
                 docker rm -f jenkins-backend || true
-                docker run -p5000:3000 -v /home/deploy/data.csv:/app/data.csv -d --name jenkins-backend abdulwahabshukri/jenkins-backend:jenkins-${GITHUB_RUN_ID}
+                docker run -p5000:5000 -v /home/deploy/data.csv:/app/data.csv -d --name jenkins-backend abdulwahabshukri/jenkins-backend:jenkins-${GITHUB_RUN_ID}
                 '''
             }
         }
